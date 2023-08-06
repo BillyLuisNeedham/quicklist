@@ -7,7 +7,17 @@ data class ItemToBuy(
     val name: ItemName,
     val isChecked: ItemIsChecked,
     val quantity: Quantity,
-)
+) {
+    companion object {
+        fun create(name: ItemName, quantity: Quantity): ItemToBuy =
+            ItemToBuy(
+                id = ItemId.generate(),
+                name = name,
+                isChecked = ItemIsChecked(false),
+                quantity = quantity,
+            )
+    }
+}
 
 @JvmInline
 value class ItemId(val value: String) {
