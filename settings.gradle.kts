@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "quicklist"
 include(":app")
- 
+include(":CoreDomain")
