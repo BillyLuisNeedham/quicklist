@@ -1,0 +1,29 @@
+import kotlin.Boolean;
+
+CREATE TABLE ItemList (
+    item_list_id TEXT PRIMARY KEY NOT NULL,
+    item_list_is_checked INTEGER AS Boolean NOT NULL,
+    item_id TEXT NOT NULL,
+    FOREIGN KEY (item_id) REFERENCES Item(item_id)
+);
+
+getItemLists:
+SELECT * FROM ItemList;
+
+getItemListById:
+SELECT * FROM ItemList WHERE item_list_id = ?;
+
+getItemListByItemId:
+SELECT * FROM ItemList WHERE item_id = ?;
+
+insertItemList:
+INSERT INTO ItemList (item_list_id, item_list_is_checked, item_id) VALUES (?, ?, ?);
+
+updateItemList:
+UPDATE ItemList SET item_list_is_checked = ? WHERE item_list_id = ?;
+
+deleteItemList:
+DELETE FROM ItemList WHERE item_list_id = ?;
+
+deleteItemLists:
+DELETE FROM ItemList WHERE item_id = ?;
