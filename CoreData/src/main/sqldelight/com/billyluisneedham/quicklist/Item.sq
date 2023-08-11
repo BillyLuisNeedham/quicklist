@@ -1,0 +1,27 @@
+CREATE TABLE Item (
+    item_id TEXT PRIMARY KEY NOT NULL,
+    item_name TEXT NOT NULL,
+    category_id TEXT NOT NULL,
+    FOREIGN KEY (category_id) REFERENCES Category(category_id)
+);
+
+getAllItems:
+SELECT * FROM Item;
+
+getItemsByCategory:
+SELECT * FROM Item WHERE category_id = ?;
+
+getItemById:
+SELECT * FROM Item WHERE item_id = ?;
+
+insertItem:
+INSERT INTO Item (item_id, item_name, category_id) VALUES (?, ?, ?);
+
+updateItem:
+UPDATE Item SET item_name = ?, category_id = ? WHERE item_id = ?;
+
+deleteItem:
+DELETE FROM Item WHERE item_id = ?;
+
+deleteAllItems:
+DELETE FROM Item;
