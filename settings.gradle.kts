@@ -17,3 +17,4 @@ rootProject.name = "quicklist"
 include(":app")
 include(":CoreDomain")
 include(":AddItemFeature")
+include(":CoreData")
