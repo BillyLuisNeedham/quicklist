@@ -2,6 +2,7 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.sqldelight)
 }
 
 android {
@@ -32,6 +33,15 @@ android {
         jvmTarget = "1.8"
     }
 }
+
+sqldelight {
+    databases {
+        create("Database") {
+            packageName.set("com.billyluisneedham.quicklist")
+        }
+    }
+}
+
 
 dependencies {
 
