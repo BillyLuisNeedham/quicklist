@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS Category (
+    category_id TEXT PRIMARY KEY NOT NULL,
+    category_name TEXT NOT NULL
+);
+
+INSERT INTO Category (category_id, category_name) VALUES (?, ?);
+SELECT * FROM Category;
+SELECT * FROM Category WHERE category_id = ?;
+UPDATE Category SET category_name = ? WHERE category_id = ?;
+DELETE FROM Category WHERE category_id = ?;
+DELETE FROM Category;
