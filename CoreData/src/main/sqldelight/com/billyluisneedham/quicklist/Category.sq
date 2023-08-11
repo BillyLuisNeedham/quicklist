@@ -3,9 +3,20 @@ CREATE TABLE IF NOT EXISTS Category (
     category_name TEXT NOT NULL
 );
 
+createCategory:
 INSERT INTO Category (category_id, category_name) VALUES (?, ?);
+
+getAllCategories:
 SELECT * FROM Category;
+
+getCategoryById:
 SELECT * FROM Category WHERE category_id = ?;
+
+updateCategory:
 UPDATE Category SET category_name = ? WHERE category_id = ?;
+
+deleteCategory:
 DELETE FROM Category WHERE category_id = ?;
+
+deleteAllCategories:
 DELETE FROM Category;
